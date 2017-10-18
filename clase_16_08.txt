@@ -1,0 +1,3 @@
+#definir objeto
+1) class ballon
+2) función init
