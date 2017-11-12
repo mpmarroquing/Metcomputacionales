@@ -1,0 +1,26 @@
+#TAREA4
+
+Resultados.pdf: Resultados_hw4.log Resultados_hw4.aux Resultados_hw4.synctex.gz Resultados_hw4.tex
+	python Resultados.tex 
+
+sonido.wav: Plots.py
+	python Plots.py
+
+cuerda_ef.pdf: Plots.py datos_cuerda_ef.dat
+	python Plots.py
+
+cuerda_es.pdf: Plots.py datos_cuerda_es.dat
+	python Plots.py
+
+
+datos_cuerda_ef.dat: Ondas.x
+	./Ondas.x >datos_cuerda_ef.dat
+
+datos_cuerda_es.dat: Ondas.x
+	./Ondas.x >datos_cuerda_es.dat
+
+datos_tambor.dat: Ondas.x
+	./Ondas.x >datos_tambor.dat
+
+Ondas.x: Ondas.c
+	cc -lm Ondas.c -o Ondas.x
